@@ -1,0 +1,184 @@
+---
+layout: default
+title: Home
+---
+<div class="layout">
+  <nav class="toc">
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#research">Research Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#honours">Honours &amp; Awards</a>
+  </nav>
+
+  <div class="page-content">
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="avatar">
+          {% if site.avatar_image %}
+          <img src="{{ site.avatar_image | relative_url }}" alt="{{ site.author }}">
+          {% else %}
+          <span>{{ site.avatar_initials | default: "TV" }}</span>
+          {% endif %}
+        </div>
+        <div class="hero-text">
+          <h1>{{ site.author }}</h1>
+          <p class="role">PhD Student in Machine Learning</p>
+          <p class="affiliation">{{ site.affiliation }}</p>
+          {% if site.email %}
+          <p class="email-line">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </p>
+          {% endif %}
+          {% if site.tagline %}<span class="tagline">{{ site.tagline }}</span>{% endif %}
+          {% include social-links.html %}
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p class="lede">
+        I am a PhD student in the School of Computing at the Australian National University (ANU), where I work on
+        machine learning and generative modeling. Prior to my PhD, I spent eight years as a Machine Learning Engineer
+        at ByteDance, working on large-scale machine learning systems. I received my M.Eng. in 2018 and B.Eng. in 2016
+        from Hanoi University of Science and Technology (HUST).
+      </p>
+    </section>
+
+    <section class="section" id="news">
+      <h2>News</h2>
+      {% if site.news %}
+      <ul class="news-list">
+        {% for item in site.news %}
+        <li class="news-item">
+          <span class="news-date">{{ item.date }}</span>
+          <span class="news-text">{{ item.text }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="empty-note">No news yet — check back soon.</p>
+      {% endif %}
+    </section>
+
+    {% if site.research_experience %}
+    <section class="section" id="research">
+      <h2>Research Experience</h2>
+      <ul class="exp-list">
+        {% for item in site.research_experience %}
+        <li class="exp-item">
+          <div class="exp-head">
+            <div class="exp-role">{{ item.role }} <span class="exp-org">— {{ item.org }}</span></div>
+            <div class="exp-period">{{ item.period }}</div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <section class="section" id="publications">
+      <h2>Selected Publications</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.knosys.2026.116606" target="_blank" rel="noopener">Discord: Enhancing Knowledge Distillation via Cross-Chain of Thought and Optimal Transport Alignment between Models with Different Tokenizers</a></div>
+          <div class="pub-authors">Nam Le Hai, Anh Duc Le, <span class="me">Tu Vu</span>, Linh Ngo Van</div>
+          <div class="pub-meta">Knowledge-Based Systems, 2026</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.knosys.2026.116001" target="_blank" rel="noopener">MoL: Mixture of Layers in Cross-Tokenizer Embedding Model Distillation</a></div>
+          <div class="pub-authors">Hai An Vu*, Minh-Phuc Truong*, <span class="me">Tu Vu</span>*, Linh Ngo Van</div>
+          <div class="pub-meta">Knowledge-Based Systems, 2026</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">HieRD: Hierarchical Relational Distillation for Vision-Language Embedding Models</div>
+          <div class="pub-authors">Vinh Le*, Nguyen Hong Dang*, <span class="me">Tu Vu</span>, Linh Ngo Van, Duc Anh Nguyen, Trung Le</div>
+          <div class="pub-meta">International Conference on Machine Learning (ICML), 2026</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">Topic Modeling for Short Texts via Optimal Transport-Based Clustering</div>
+          <div class="pub-authors"><span class="me">Tu Vu</span>*, Manh Do*, Tung Nguyen*, Linh Ngo Van, Sang Dinh, Thien Huu Nguyen</div>
+          <div class="pub-meta">Findings of the Association for Computational Linguistics (ACL), 2025</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">EMO: Embedding Model Distillation via Intra-Model Relation and Optimal Transport Alignments</div>
+          <div class="pub-authors">Minh Phuc Truong*, Hai An Vu*, <span class="me">Tu Vu</span>*, Nguyen Thi Ngoc Diep, Linh Ngo Van, Thien Huu Nguyen, Trung Le</div>
+          <div class="pub-meta">Conference on Empirical Methods in Natural Language Processing (EMNLP), 2025</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</div>
+          <div class="pub-authors">Hoang Tran Vuong*, Tue Le*, <span class="me">Tu Vu</span>*, Tung Nguyen*, Linh Ngo Van, Sang Dinh, Thien Huu Nguyen</div>
+          <div class="pub-meta">Findings of the Association for Computational Linguistics (ACL), 2025</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">GroundingGPT: Language Enhanced Multi-modal Grounding Model</div>
+          <div class="pub-authors">Zhaowei Li, Qi Xu, Dong Zhang, Hang Song, Yiqing Cai, Qi Qi, Ran Zhou, Junting Pan, Zefeng Li, <span class="me">Tu Vu</span>, et al.</div>
+          <div class="pub-meta">Annual Meeting of the Association for Computational Linguistics (ACL), 2024</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">A Flexible Stochastic Method for Solving the MAP Problem in Topic Models</div>
+          <div class="pub-authors"><span class="me">Tu Vu</span>, Xuan Bui, Khoat Than, Ryutaro Ichise</div>
+          <div class="pub-meta">Computación y Sistemas, 2018</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">Lifelong Learning Maxent for Suggestion Classification</div>
+          <div class="pub-authors">Thi-Lan Ngo, <span class="me">Tu Vu</span>, Hideaki Takeda, Son Bao Pham, Xuan Hieu Phan</div>
+          <div class="pub-meta">Computación y Sistemas, 2018</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">A Fast Algorithm for Posterior Inference with Latent Dirichlet Allocation</div>
+          <div class="pub-authors">Thi-Thanh-Xuan Bui, <span class="me">Tu Vu</span>, Atsuhiro Takasu, Khoat Than</div>
+          <div class="pub-meta">Asian Conference on Intelligent Information and Database Systems (ACIIDS), 2018</div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">Stochastic Bounds for Inference in Topic Models</div>
+          <div class="pub-authors">Xuan Bui, <span class="me">Tu Vu</span>, Khoat Than</div>
+          <div class="pub-meta">International Conference on Advances in Information and Communication Technology (ICTA), 2016</div>
+        </li>
+      </ul>
+      <p class="pub-note">* Equal contribution.</p>
+    </section>
+
+    {% if site.honours %}
+    <section class="section" id="honours">
+      <h2>Honours &amp; Awards</h2>
+      <ul class="award-list">
+        {% for item in site.honours %}
+        <li class="award-item">
+          <span class="award-dot"></span>
+          <div class="award-content">{{ item.title }} <span class="award-org">— {{ item.org }}</span></div>
+          <div class="award-period">{{ item.period }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var sections = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  function onScroll() {
+    var pos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= pos) current = sec;
+    });
+    links.forEach(function (a) {
+      a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+    });
+  }
+
+  if (sections.length) {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+})();
+</script>

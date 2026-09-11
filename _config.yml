@@ -1,34 +1,86 @@
-title: "AI/ML Note"
-author: "Vũ Văn Tú"
-description: "Step-by-Step" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+title: "Tu Vu"
+author: "Tu Vu"
+description: "PhD student at the School of Computing, ANU, working on machine learning and generative models."
+email: "tu.vu@anu.edu.au"
 
-# Email / Social media user names used by the minima theme:
-# All of these are optional and can be removed or commented out
-email: "vutu201130@mail.com"
-# twitter_username: "twitteruser"
-# github_username: "githubuser"
-# linkedin_username: "linkedinuser"
-#facebook_username: username
-#flickr_username: username
-#instagram_username: username
-#pinterest_username: username
-#youtube_username: username
-#googleplus_username: +username
+# Profile
+affiliation: "School of Computing, Australian National University, Canberra"
+tagline: "Machine Learning · Generative Models"
+avatar_initials: "TV"
+avatar_image: "/assets/img/avatar.jpg"
+
+# Social / links
+github_username: "tu-v"
+scholar_url: "https://scholar.google.com/citations?user=shnmptsAAAAJ&hl=vi"
+
+news:
+  - date: "09-2026"
+    text: 'Attended MLSS 2026 in Tübingen, Germany.'
+  - date: "03-2026"
+    text: 'Started my PhD at ANU under the supervision of <a href="https://thangbui.github.io/" target="_blank" rel="noopener">Dr. Thang Bui</a>.'
+
+research_interests:
+  - "Machine Learning"
+  - "Generative Models"
+
+education:
+  - degree: "PhD in Computer Science"
+    school: "Australian National University (ANU), School of Computing"
+    period: "2026 – Present"
+  - degree: "M.Eng."
+    school: "Hanoi University of Science and Technology (HUST)"
+    period: "2018"
+  - degree: "B.Eng."
+    school: "Hanoi University of Science and Technology (HUST)"
+    period: "2016"
+
+experience:
+  - role: "Machine Learning Engineer"
+    org: "ByteDance"
+    period: "2018 – 2026"
+    note: "8 years"
+
+research_experience:
+  - role: "Research Student"
+    org: "Data Science Lab, HUST, Hanoi, Vietnam"
+    period: "01-2015 – 12-2018"
+  - role: "Research Student"
+    org: "Ichise's Laboratory, NII, Tokyo, Japan"
+    period: "12-2017 – 01-2018"
+
+honours:
+  - title: "PhD Scholarship (Fully Funded)"
+    org: "Australian National University"
+    period: "2026"
+  - title: "First Prize in Calculus"
+    org: "20th National Student Mathematics Olympiad"
+    period: "2012"
+  - title: "Second Prize in Algebra"
+    org: "20th National Student Mathematics Olympiad"
+    period: "2012"
+  - title: "Consolation Prize in Mathematics"
+    org: "Vietnam National Excellent Student Contest"
+    period: "2011"
+  - title: "Third Prize in Mathematics"
+    org: "Vietnam National Excellent Student Contest"
+    period: "2010"
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: "minima"
-
-# rss: rss
 markdown: kramdown
 
 kramdown:
   math_engine: mathjax
-    
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
+  - jekyll-relative-links
 
 titles_from_headings:
   strip_title: true
@@ -37,6 +89,6 @@ titles_from_headings:
 defaults:
   - scope:
       path: ""
-      type: post
+      type: posts
     values:
       tags: Other
